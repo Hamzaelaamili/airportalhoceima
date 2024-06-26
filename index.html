@@ -349,31 +349,50 @@
 
           <div class="col-lg-6">
             <div class="col-lg-6">
-              <form id="contact-form" action="https://api.web3forms.com/submit" method="post" >
-                  <div class="row gy-4">
-                    <input type="hidden" name="access_key" value="51dd0e52-4d13-44ae-886f-e07d7224cc50">
-          
-                      <div class="col-md-6">
-                          <input type="text" name="name" class="form-control" placeholder="Your Name" required="">
-                      </div>
-                      <div class="col-md-6">
-                          <input type="email" class="form-control" name="email" placeholder="Your Email" required="">
-                      </div>
-                      <div class="col-md-12">
-                          <input type="text" class="form-control" name="subject" placeholder="Subject" required="">
-                      </div>
-          
-                      <div class="col-md-12">
-                          <textarea class="form-control" name="message" rows="6" placeholder="Message" required=""></textarea>
-                      </div>
-          
-                      <div class="col-md-12 text-center">
-                          <div class="error-message"></div>
-                          <button type="submit">Send Message</button>
-                      </div>
-          
-                  </div>
-              </form>
+              <!-- 
+    This is a working contact form. To receive email, 
+    Replace YOUR_ACCESS_KEY_HERE with your actual Access Key.
+
+    Create Access Key here 👉 https://web3forms.com/
+ -->
+
+<section class="contact-section">
+  <div class="contact-intro">
+    <h2 class="contact-title">Get in Touch</h2>
+    <p class="contact-description">
+      Fill out the form below and we'll get back to you as soon as possible.
+    </p>
+  </div>
+
+  <form class="contact-form" action="https://api.web3forms.com/submit" method="POST">
+
+    <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE" />
+    <input type="hidden" name="subject" value="New Contact Form Submission from Web3Forms" />
+    <input type="hidden" name="from_name" value="My Website" />
+    <!-- More custom ization options available in the docs: https://docs.web3forms.com -->
+
+    <div class="form-group-container">
+      <div class="form-group">
+        <label for="name" class="form-label">Name</label>
+        <input id="name" name="name" class="form-input" placeholder="Your name" type="text" />
+      </div>
+      <div class="form-group">
+        <label for="email" class="form-label">Email</label>
+        <input id="email" name="email" class="form-input" placeholder="Your email" type="email" />
+      </div>
+      <div class="form-group">
+        <label for="phone" class="form-label">Phone</label>
+        <input id="phone" name="phone" class="form-input" placeholder="+1 (234) 56789" type="text" />
+      </div>
+      <div class="form-group">
+        <label for="message" class="form-label">Message</label>
+        <textarea class="form-textarea" id="message" name="message" placeholder="Your message"></textarea>
+      </div>
+    </div>
+    <button class="form-submit" type="submit">Send Message</button>
+  </form>
+
+</section>
           </div>
           <!-- End Contact Form -->
 
