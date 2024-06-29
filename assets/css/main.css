@@ -1412,7 +1412,22 @@ section,
   color: color-mix(in srgb, var(--default-color), transparent 50%);
   font-size: 14px;
 }
+.btn-call {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #28a745; /* Green color for call button */
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 16px;
+}
 
+.btn-call i {
+  margin-right: 8px;
+  font-size: 20px;
+}
 .portfolio-details .portfolio-info .btn-visit {
   padding: 8px 40px;
   background: var(--accent-color);
