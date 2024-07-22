@@ -849,58 +849,79 @@ section,
 /*--------------------------------------------------------------
 # Services Section
 --------------------------------------------------------------*/
-.service-item {
-  background: #fff;
-  box-shadow: 0px 0 30px rgba(1, 41, 112, 0.08);
-  padding: 20px;
-  border-radius: 8px;
+.services .service-item {
   position: relative;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
+  padding-top: 40px;
 }
 
-.service-item .icon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100px; /* Increased size */
-  height: 100px; /* Increased size */
-  background: #4154f1;
-  border-radius: 50%;
-  transition: 0.3s;
-  margin-right: 15px;
-}
-
-.service-item .icon i {
-  color: #fff;
-  font-size: 48px; /* Increased size */
-}
-
-.service-item:hover .icon {
-  background: #3b45d5;
-}
-
-.service-item .title {
-  font-weight: 700;
-  margin-bottom: 10px;
-  font-size: 24px; /* Increased size */
-}
-
-.service-item .description {
-  font-size: 18px; /* Increased size */
-  color: #444444;
-}
-
-.service-item .stretched-link {
+.services .service-item:before {
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
-  bottom: 0;
-  z-index: 1;
+  height: 2px;
+  background: color-mix(in srgb, var(--default-color), transparent 90%);
 }
 
+.services .service-item::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 30px;
+  height: 2px;
+  background: var(--accent-color);
+  border-right: 5px solid var(--background-color);
+}
+
+.services .service-item .icon {
+  width: 48px;
+  height: 48px;
+  position: relative;
+  margin-right: 50px;
+  line-height: 0;
+}
+
+.services .service-item .icon i {
+  color: color-mix(in srgb, var(--default-color), transparent 30%);
+  font-size: 56px;
+  transition: ease-in-out 0.3s;
+  z-index: 2;
+  position: relative;
+}
+
+.services .service-item .icon:before {
+  position: absolute;
+  content: "";
+  height: 30px;
+  width: 30px;
+  background: color-mix(in srgb, var(--accent-color), transparent 70%);
+  border-radius: 50px;
+  z-index: 1;
+  bottom: -15px;
+  right: -15px;
+  transition: 0.3s;
+}
+
+.services .service-item .title {
+  font-weight: 700;
+  margin-bottom: 15px;
+  font-size: 18px;
+}
+
+.services .service-item .title a {
+  color: var(--heading-color);
+}
+
+.services .service-item .title a:hover {
+  color: var(--accent-color);
+}
+
+.services .service-item .description {
+  line-height: 24px;
+  font-size: 14px;
+}
 
 /*--------------------------------------------------------------
 # Archives Section
@@ -1472,98 +1493,6 @@ section,
 /*--------------------------------------------------------------
 # Service Details Section
 --------------------------------------------------------------*/
-.icon-box {
-  background: #fff;
-  box-shadow: 0px 0 30px rgba(1, 41, 112, 0.08);
-  padding: 20px;
-  border-radius: 8px;
-  text-align: center;
-  transition: all 0.3s ease-in-out;
-}
-
-.icon-box .icon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 80px;
-  height: 80px;
-  background: #4154f1;
-  border-radius: 50%;
-  margin: 0 auto 20px auto;
-  transition: 0.3s;
-}
-
-.icon-box .icon i {
-  color: #fff;
-  font-size: 36px;
-}
-
-.icon-box:hover .icon {
-  background: #3b45d5;
-}
-
-.icon-box h3 {
-  font-size: 24px;
-  font-weight: 700;
-  margin: 10px 0;
-  color: #444444;
-}
-
-.icon-box p {
-  font-size: 16px;
-  color: #444444;
-}
-
-.service-item {
-  background: #fff;
-  box-shadow: 0px 0 30px rgba(1, 41, 112, 0.08);
-  padding: 20px;
-  border-radius: 8px;
-  position: relative;
-  overflow: hidden;
-}
-
-.service-item .icon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 64px;
-  height: 64px;
-  background: #4154f1;
-  border-radius: 50%;
-  transition: 0.3s;
-  margin-right: 15px;
-}
-
-.service-item .icon i {
-  color: #fff;
-  font-size: 28px;
-}
-
-.service-item:hover .icon {
-  background: #3b45d5;
-}
-
-.service-item .title {
-  font-weight: 700;
-  margin-bottom: 10px;
-  font-size: 18px;
-}
-
-.service-item .description {
-  font-size: 14px;
-  color: #444444;
-}
-
-.service-item .stretched-link {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 1;
-}
-
 .service-details .service-box {
   padding: 20px;
   box-shadow: 0px 2px 20px color-mix(in srgb, var(--default-color), transparent 88%);
