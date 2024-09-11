@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Important Information for Passengers</title>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f8f9fa;
+    }
+    .section-title h2 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      font-weight: 700;
+    }
+    .important-info p, .important-info ul {
+      margin-bottom: 1.5rem;
+    }
+    .icon {
+      font-size: 1.5rem;
+      margin-right: 10px;
+      color: #007bff;
+    }
+    .important-info h3 {
+      display: flex;
+      align-items: center;
+    }
+    .card {
+      border: none;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+      margin-bottom: 30px;
+      background-color: #fff;
+    }
+    .card-body {
+      padding: 20px;
+    }
+    footer {
+      background-color: #343a40;
+      color: #fff;
+      padding: 20px 0;
+    }
+    footer p {
+      margin: 0;
+    }
+    .footer-text {
+      font-size: 1rem;
+    }
+
+    /* Contact Section */
+    .contact-section {
+      background: linear-gradient(to right, #e2e2e2, #ffffff);
+      padding: 60px 0;
+      border-radius: 10px;
+      margin-top: 30px;
+    }
+    .contact-intro {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    .contact-intro h2 {
+      font-size: 2rem;
+      margin-bottom: 10px;
+    }
+    .contact-intro p {
+      font-size: 1rem;
+      color: #333;
+    }
+    .contact-form {
+      max-width: 800px;
+      margin: 0 auto;
+      background: #ffffff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    .form-group-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+    .form-group {
+      flex: 1;
+      min-width: 200px;
+    }
+    .form-label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: 600;
+      color: #333;
+    }
+    .form-input, .form-textarea {
+      width: 100%;
+      padding: 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      margin-bottom: 15px;
+    }
+    .form-submit {
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      padding: 15px;
+      font-size: 1rem;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .form-submit:hover {
+      background-color: #0056b3;
+    }
+    .info-item {
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    .info-item i {
+      font-size: 2rem;
+      color: #007bff;
+    }
+    .info-item h2 {
+      margin: 10px 0;
+      font-size: 1.25rem;
+    }
+    .info-item p {
+      font-size: 1rem;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Important Information Section -->
+  <section id="important-info" class="container my-5">
+    <div class="section-title text-center">
+      <h2>Important Information for Passengers</h2>
+      <p>Please read the following information carefully before your travel.</p>
+    </div>
+
+    <div class="row">
+      <!-- Security Information -->
+      <div class="col-md-6">
+        <div class="card">
+          <div class="card-body important-info">
+            <h3><i class="fas fa-shield-alt icon"></i> Security Information</h3>
+            <p>
+              Arrive at least 2 hours before domestic flights and 3 hours before international flights. Ensure all personal belongings are screened.
+            </p>
+            <ul>
+              <li>Carry your boarding pass and ID at all times.</li>
+              <li>Remove electronic devices from your luggage for screening.</li>
+              <li>Follow instructions from security personnel.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Baggage Information -->
+      <div class="col-md-6">
+        <div class="card">
+          <div class="card-body important-info">
+            <h3><i class="fas fa-suitcase-rolling icon"></i> Baggage Information</h3>
+            <p>
+              Check your baggage allowance with your airline. Different airlines have varying rules on size, weight, and number of bags.
+            </p>
+            <ul>
+              <li>Hand luggage should not exceed 7 kg.</li>
+              <li>Liquids in carry-ons must be under 100 ml and packed in a resealable bag.</li>
+              <li>Label all checked luggage with your name and contact details.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <!-- Prohibited Items -->
+      <div class="col-md-6">
+        <div class="card">
+          <div class="card-body important-info">
+            <h3><i class="fas fa-ban icon"></i> Prohibited Items</h3>
+            <p>
+              Certain items are prohibited in both hand and checked luggage for safety reasons:
+            </p>
+            <ul>
+              <li>Explosives, fireworks, and flammable liquids</li>
+              <li>Sharp objects like knives and scissors</li>
+              <li>Guns, ammunition, and other weapons</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Travel Tips -->
+      <div class="col-md-6">
+        <div class="card">
+          <div class="card-body important-info">
+            <h3><i class="fas fa-lightbulb icon"></i> Travel Tips</h3>
+            <p>Here are some tips for a smoother travel experience:</p>
+            <ul>
+              <li>Keep copies of your travel documents (passport, visa, etc.).</li>
+              <li>Stay hydrated and move around to avoid discomfort during the flight.</li>
+              <li>Double-check your boarding gate and time.</li>
+              <li>Download your airline's app for flight updates.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End Important Information Section -->
+
+  <!-- Contact Section -->
+  <section class="contact-section">
+    <div class="contact-intro">
+      <h2 class="contact-title">Get in Touch</h2>
+      <p class="contact-description">Fill out the form below and we'll get back to you as soon as possible.</p>
+    </div>
+
+    <form class="contact-form" action="https://api.web3forms.com/submit" method="POST">
+      <input type="hidden" name="access_key" value="51dd0e52-4d13-44ae-886f-e07d7224cc50" />
+      <input type="hidden" name="subject" value="get in touch" />
+      <input type="hidden" name="from_name" value="Al Hoceima Airport" />
+
+      <div class="form-group-container">
+        <div class="form-group">
+          <label for="name" class="form-label">Name</label>
+          <input id="name" name="name" class="form-input" placeholder="Your name" type="text" />
+        </div>
+        <div class="form-group">
+          <label for="email" class="form-label">Email</label>
+          <input id="email" name="email" class="form-input" placeholder="Your email" type="email" />
+        </div>
+        <div class="form-group">
+          <label for="phone" class="form-label">Phone</label>
+          <input id="phone" name="phone" class="form-input" placeholder="+212 6 12345678" type="text" />
+        </div>
+        <div class="form-group">
+          <label for="message" class="form-label">Message</label>
+          <textarea class="form-textarea" id="message" name="message" placeholder="Your message"></textarea>
+        </div>
+      </div>
+      <button class="form-submit" type="submit">Send Message</button>
+    </form>
+  </section>
+  <!-- End Contact Section -->
+
+  <!-- Footer Section -->
+  <footer class="text-center">
+    <p class="footer-text">Need assistance? Contact us at: <strong>+212 539982560</strong> 
+  </footer>
+
+</body>
+</html>
