@@ -13,54 +13,61 @@
  
  
  <style>
-    /* Style for the modal */
-    .modal {
-      display: none; /* Hidden by default */
-      position: fixed;
-      z-index: 1;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      overflow: auto;
-      background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent black background */
-    }
+   /* Modal Styling */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center; /* Center vertically */
+  justify-content: center; /* Center horizontally */
+}
 
-    /* Modal content */
-    .modal-content {
-      position: relative;
-      margin: 5% auto;
-      width: 80%; /* Adjust the width as needed */
-      max-width: 800px; /* Maximum width */
-    }
+.modal-content {
+  position: relative;
+  width: 90%;
+  max-width: 90%; /* Adjust for better responsiveness */
+  background-color: white;
+  border-radius: 10px;
+  text-align: center;
+}
 
-    /* Responsive video container */
-    .video-container {
-      position: relative;
-      padding-bottom: 56.25%; /* 16:9 aspect ratio */
-      height: 0;
-      overflow: hidden;
-    }
+.video-container {
+  position: relative;
+  width: 100%; /* Ensure container takes full width of modal-content */
+  padding-top: 56.25%; /* 16:9 Aspect Ratio, adjust as needed */
+  overflow: hidden;
+}
 
-    /* Make the video responsive */
-    .video-container video {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-    }
+.video-container video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 85%;
+  object-fit: contain; /* Ensure video fits within container */
+}
 
-    /* Close button */
-    .close {
-      position: absolute;
-      top: 10px;
-      right: 25px;
-      color: white;
-      font-size: 35px;
-      font-weight: bold;
-      cursor: pointer;
-    }
+/* Close Button */
+.close {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  color: #aaa;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  cursor: pointer;
+}
     body {
       font-family: 'Arial', sans-serif;
       background-color: #f8f9fa;
@@ -305,11 +312,13 @@
   <div id="videoModal" class="modal">
     <div class="modal-content">
       <span class="close">&times;</span>
-      <video width="700" height="540" controls >
+      <div class="video-container">
+      <video width="290" height="400" controls >
         <source src="assets/video.mp4" type="video/mp4">
         Your browser does not support the video tag.
       </video>
     </div>
+</div>
   </div>
 
   <!-- Contact Section -->
@@ -353,34 +362,32 @@
   </footer>
 
   <script>
-    window.onload = function() {
-      var modal = document.getElementById("videoModal");
-      var video = modal.querySelector("video"); // Access the video element
-      var closeBtn = document.getElementsByClassName("close")[0];
-  
-      // Show the modal and play the video
-      modal.style.display = "block";
-      video.play(); // Play the video when the modal opens
-      video.muted = false; // Ensure the video is not muted initially
-  
-      // Close the modal and mute the video
-      closeBtn.onclick = function() {
-        modal.style.display = "none";
-        video.pause();  // Pause the video when the modal is closed
-        video.currentTime = 0;  // Reset the video to the start (optional)
-        video.muted = true; // Mute the video when the modal is closed
-      }
-  
-      // Close the modal and mute the video when clicking outside of the modal
-      window.onclick = function(event) {
-        if (event.target == modal) {
-          modal.style.display = "none";
-          video.pause();  // Pause the video
-          video.currentTime = 0;  // Reset the video (optional)
-          video.muted = true; // Mute the video when the modal is closed
-        }
-      }
-    };
+   window.onload = function() {
+  var modal = document.getElementById("videoModal");
+  var closeBtn = document.getElementsByClassName("close")[0];
+  var video = document.querySelector("#videoModal video");
+
+  // Show the modal and play the video
+  modal.style.display = "block";
+  video.play();
+
+  // Close the modal
+  closeBtn.onclick = function() {
+    modal.style.display = "none";
+    video.pause();
+    video.currentTime = 0; // Reset video to start
+  }
+
+  // Close the modal if the user clicks outside of it
+  window.onclick = function(event) {
+    if (event.target == modal) {
+      modal.style.display = "none";
+      video.pause();
+      video.currentTime = 0; // Reset video to start
+    }
+  }
+};
+
   </script>
   
 
