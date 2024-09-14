@@ -6,7 +6,61 @@
   <title>Important Information for Passengers</title>
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-  <style>
+ 
+  <!-- Favicons -->
+  <link href="/loginregister/aerostage/assets/img/logo/شعار_المكتب_الوطني_للمطارات.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+ 
+ 
+ <style>
+    /* Style for the modal */
+    .modal {
+      display: none; /* Hidden by default */
+      position: fixed;
+      z-index: 1;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent black background */
+    }
+
+    /* Modal content */
+    .modal-content {
+      position: relative;
+      margin: 5% auto;
+      width: 80%; /* Adjust the width as needed */
+      max-width: 800px; /* Maximum width */
+    }
+
+    /* Responsive video container */
+    .video-container {
+      position: relative;
+      padding-bottom: 56.25%; /* 16:9 aspect ratio */
+      height: 0;
+      overflow: hidden;
+    }
+
+    /* Make the video responsive */
+    .video-container video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    /* Close button */
+    .close {
+      position: absolute;
+      top: 10px;
+      right: 25px;
+      color: white;
+      font-size: 35px;
+      font-weight: bold;
+      cursor: pointer;
+    }
     body {
       font-family: 'Arial', sans-serif;
       background-color: #f8f9fa;
@@ -127,6 +181,42 @@
       font-size: 1rem;
       color: #333;
     }
+
+    /* Modal Styling */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1;
+      padding-top: 100px;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    .modal-content {
+      margin: auto;
+      padding: 20px;
+      width: 80%;
+      background-color: white;
+      text-align: center;
+    }
+
+    .close {
+      position: absolute;
+      top: 10px;
+      right: 20px;
+      color: #aaa;
+      font-size: 28px;
+      font-weight: bold;
+    }
+
+    .close:hover,
+    .close:focus {
+      color: black;
+      cursor: pointer;
+    }
   </style>
 </head>
 <body>
@@ -211,6 +301,17 @@
   </section>
   <!-- End Important Information Section -->
 
+  <!-- Video Modal -->
+  <div id="videoModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <video width="700" height="540" controls >
+        <source src="assets/video.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+  </div>
+
   <!-- Contact Section -->
   <section class="contact-section">
     <div class="contact-intro">
@@ -250,6 +351,38 @@
   <footer class="text-center">
     <p class="footer-text">Need assistance? Contact us at: <strong>+212 539982560</strong> 
   </footer>
+
+  <script>
+    window.onload = function() {
+      var modal = document.getElementById("videoModal");
+      var video = modal.querySelector("video"); // Access the video element
+      var closeBtn = document.getElementsByClassName("close")[0];
+  
+      // Show the modal and play the video
+      modal.style.display = "block";
+      video.play(); // Play the video when the modal opens
+      video.muted = false; // Ensure the video is not muted initially
+  
+      // Close the modal and mute the video
+      closeBtn.onclick = function() {
+        modal.style.display = "none";
+        video.pause();  // Pause the video when the modal is closed
+        video.currentTime = 0;  // Reset the video to the start (optional)
+        video.muted = true; // Mute the video when the modal is closed
+      }
+  
+      // Close the modal and mute the video when clicking outside of the modal
+      window.onclick = function(event) {
+        if (event.target == modal) {
+          modal.style.display = "none";
+          video.pause();  // Pause the video
+          video.currentTime = 0;  // Reset the video (optional)
+          video.muted = true; // Mute the video when the modal is closed
+        }
+      }
+    };
+  </script>
+  
 
 </body>
 </html>
